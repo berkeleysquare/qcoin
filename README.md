@@ -1,7 +1,7 @@
 # QCoin
-Generate quantum-random "coin flips" using [Colorado University Randomness Beacon (CURBy)](https://random.colorado.edu/) and [crby-js-client](https://curby.gitbook.io/curby-js-client#buff-beacon-project-curby-client).
+Generate quantum-random "coin flips" using [Colorado University Randomness Beacon (CURBy)](https://random.colorado.edu/) and [corby-js-client](https://curby.gitbook.io/curby-js-client#buff-beacon-project-curby-client).
 
-Clicking the "Flip Coins" button gets teh most recent Randomness byte stream from the public API. This object includes a method to shuffle an array, and a limot to the length of that array. QCoin generates a plain-sorted array [0,1,0,1,...] the max length, then shuffles the array and returns the first half.
+Clicking the "Flip Coins" button gets the most recent Randomness byte stream from the public API. This object includes a method to shuffle an array, and a limit to the length of that array. QCoin generates a plain-sorted array [0,1,0,1,...] the max length, then shuffles the array and returns the first half.
 
 The user can paginate through the available "coins."
 
