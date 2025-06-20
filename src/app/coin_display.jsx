@@ -32,7 +32,13 @@ const CoinFlip = () => {
   };
 
   return (
-    <div className="coin-container">
+    <div title='Powered by CU Randomness Beacon (CURBy)'
+      className="coin-container">
+      <img
+        src="/qcoin_logo.png"
+        alt="QCoin Logo"
+        style={{ width: '220px', marginBottom: '24px' }}
+      />
       {isFlipping && <div className={'coin flipping'}>
         <img
           src="/flipping_heads.png"
@@ -81,7 +87,10 @@ const CoinFlip = () => {
       </div>
       <div className="button-container">
         {hasData() && <h4>{getRandomness()}</h4>}
-      </div>  
+      </div>
+       <p>
+        <strong>Powered by CU Randomness Beacon (CURBy)</strong>
+      </p>
     </div>
   );
 };
