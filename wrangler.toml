@@ -1,0 +1,14 @@
+# Cloudflare Pages configuration
+name = "qcoin"
+compatibility_date = "2023-12-01"
+pages_build_output_dir = "out"
+
+[env.production]
+name = "qcoin"
+
+[env.preview]
+name = "qcoin-preview"
+
+# Add any environment variables you need here
+# [vars]
+# MY_VAR = "production_value"
