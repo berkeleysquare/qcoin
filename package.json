@@ -6,12 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:cloudflare": "next build && npx wrangler pages deploy out",
+    "deploy": "npm run build:cloudflare",
+    "cf:dev": "npx wrangler pages dev out --compatibility-date=2023-12-01"
   },
   "dependencies": {
     "@buff-beacon-project/curby-client": "^1.2.0",
     "next": "15.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "wrangler": "^3.114.14"
   }
 }

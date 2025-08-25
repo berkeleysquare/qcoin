@@ -1,6 +1,6 @@
 import {DIRNGClient} from '@buff-beacon-project/curby-client'
 
-export const createClient = () => {
+const createClient = () => {
     return DIRNGClient.create();
 };
 
@@ -15,7 +15,7 @@ const makeArray = length => {
 // Make an array of maxShuffle Length with 0s and 1s
 // Shuffle, then use half of the array
 // to preserve random distribution of 1s and 0s
-export const flipCoin = async client => {
+const flipCoin = async client => {
     const randomness = await client.randomness();
     console.log('Randomness timestamp:', randomness);
     const arrayLength = Math.floor(randomness.maxShuffleLength / 2);
@@ -27,3 +27,16 @@ export const flipCoin = async client => {
         arrayLength,
     };
 };
+
+// Create the client once, outside the handler
+const client = createClient();
+
+export async function onRequestGet() {
+  try {
+    const result = await flipCoin(client);
+    return Response.json({ result });
+  } catch (error) {
+    console.error('Error in flip function:', error);
+    return Response.json({ error: 'Internal server error' }, { status: 500 });
+  }
+}
